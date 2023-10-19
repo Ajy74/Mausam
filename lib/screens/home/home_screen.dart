@@ -80,6 +80,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   child: Text(
                                     "${homeController.weatherData.location!.name}",
                                     // "${homeController.subLocality.value}",
+                                    // "${homeController.locality.value}",
                                     style: titleStyle20,
                                     overflow: TextOverflow.ellipsis,
                                   ),
