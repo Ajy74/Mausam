@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -139,7 +137,7 @@ class LocationSearchController extends GetxController{
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
@@ -147,21 +145,21 @@ class LocationSearchController extends GetxController{
               children: [
                  ElevatedButton(
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 30), 
-                shape: StadiumBorder(side: BorderSide(color: deepPurple)),
+                padding: const EdgeInsets.symmetric(horizontal: 30), 
+                shape: const StadiumBorder(side: BorderSide(color: deepPurple)),
                 backgroundColor: Colors.white,
                 elevation: 0,
               ),
               onPressed: () {
                 //on cancel
               },
-              child: Text("No",style: TextStyle(color: deepPurple),),
+              child: const Text("No",style: TextStyle(color: deepPurple),),
             ),
-            Spacer(), // Add spacing between the buttons
+            const Spacer(), // Add spacing between the buttons
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 30), 
-                shape: StadiumBorder(),
+              padding: const EdgeInsets.symmetric(horizontal: 30), 
+                shape: const StadiumBorder(),
                 backgroundColor: deepPurple,
                 elevation: 0,
               ),
@@ -170,7 +168,7 @@ class LocationSearchController extends GetxController{
                 _storeCityController.delete(_storeCityController.cityList[index]);
                 Get.back();
               },
-              child: Text("Yes",style: TextStyle(color: Colors.white),),
+              child: const Text("Yes",style: TextStyle(color: Colors.white),),
             ),
               ],
             ),

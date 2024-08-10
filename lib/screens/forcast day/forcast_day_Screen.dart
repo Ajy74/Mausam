@@ -279,7 +279,7 @@ class _ForcastDayScreenState extends State<ForcastDayScreen> with TickerProvider
               
                       temp:(_controller.weatherData.forecast!.forecastday![index].day!.avgtempC).toString().split('.').first, 
               
-                      title:DateFormat.EEEE().format(DateTime.parse(
+                      title:DateFormat('E').format(DateTime.parse(
                         (_controller.weatherData.forecast!.forecastday![index].date).toString() )), 
               
                       subTitle:DateFormat('d MMM, yy').format(DateTime.parse( (_controller.weatherData.forecast!.forecastday![index].date).toString() )),

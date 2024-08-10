@@ -13,10 +13,10 @@ class Forcast{
   String long;
   Forcast({required this.lat,required this.long});
 
-  late var data;
+  // late dynamic data;
 
   Future<ForCastModel> fetchForcast() async{
-   
+    dynamic data;
     final response = await http.get(Uri.parse("${ApiEndPoints.forcastWeatherUrl}&q=${lat},${long}&days=7&aqi=no&alerts=yes"));
 
     if(response.statusCode == 200){

@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:restart_app/restart_app.dart';
 import 'package:weather_guru/res/theme/colors.dart';
 
 class InternetServices extends GetxService{
@@ -28,7 +27,7 @@ class InternetServices extends GetxService{
         "Check your internet !", 
         "not connected to internet",
         backgroundColor: lightPurple.withOpacity(.3),
-        icon: Icon(Icons.network_check_outlined,color: deepPurple),
+        icon: const Icon(Icons.network_check_outlined,color: deepPurple),
       );
     }
     // returns a bool

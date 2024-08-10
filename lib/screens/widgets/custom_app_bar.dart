@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
       child: Container(
         width: mobileWidth,
         height: 55, 
-        padding: EdgeInsets.symmetric(vertical: 3),
+        padding: const EdgeInsets.symmetric(vertical: 3),
         child:
             isTitle == true ?
             Row(
@@ -31,7 +31,7 @@ class CustomAppBar extends StatelessWidget {
                       child: const BackButton(),
                     ),
                  ),
-                SizedBox(width: sizeBox5,),
+                const SizedBox(width: sizeBox5,),
                 Text("$title",style: titleStyle20,)
               ],
             )
@@ -41,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 
-                Expanded(child: Container(
+                Expanded(child: SizedBox(
                   width: Get.width*.7 ,
                   child:leftChild,
                 ),),

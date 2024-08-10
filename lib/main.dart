@@ -46,8 +46,8 @@ class _MyAppState extends State<MyApp> {
 
        quickActions.setShortcutItems(([
       // ShortcutItem(type: 'forcast', localizedTitle: 'Check Forcast'),
-      ShortcutItem(type: 'search', localizedTitle: 'Search',icon: 'search'),
-      ShortcutItem(type: 'map', localizedTitle: 'Weather Map',icon: 'cloud'),
+      const ShortcutItem(type: 'search', localizedTitle: 'Search',icon: 'search'),
+      const ShortcutItem(type: 'map', localizedTitle: 'Weather Map',icon: 'cloud'),
     ]));
     quickActions.initialize((type) {
       

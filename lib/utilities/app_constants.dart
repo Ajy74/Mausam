@@ -90,10 +90,15 @@ double normalize(value, min, max) => ((value - min) / (max - min));
   }
 
   String findIconPath(String condition,int day){
-    String con = condition.toLowerCase();
-    // print("..%%%%%%$con");
+    String con = condition.toLowerCase().trim();
+    // print("..>>>$con<<day-$day");
 
     if(day==1){
+
+      if(con == 'clear'){
+        return clear;
+      }
+
       if(con == 'sunny'){
         return sunny;
       }
@@ -119,7 +124,7 @@ double normalize(value, min, max) => ((value - min) / (max - min));
       if(con == 'patchy snow nearby'  || con == 'patchy sleet nearby'  || con == 'blowing snow'  || con == 'blizzard'){
         return snowRain;
       }
-      if(con == 'patchy light dizzle'  || con == 'light dizzle'  || con == 'freezing dizzle' ||  con == 'moderate rain at times' || con == 'moderate rain'|| con=='heavy rain at times' || con =='heavy rain' || con == 'light freezing rain' || con=='moderate or heavy freezing rain' || con=='moderate or heavy rain shower' || con == 'torrential rain shower' ){
+      if(con == 'patchy light drizzle'  || con == 'light drizzle'  || con == 'freezing drizzle' ||  con == 'moderate rain at times' || con == 'moderate rain'|| con=='heavy rain at times' || con =='heavy rain' || con == 'light freezing rain' || con=='moderate or heavy freezing rain' || con=='moderate or heavy rain shower' || con == 'torrential rain shower' ){
         return heavyRain;
       }
       if(con == 'light sleet' || con == 'moderate or heavy sleet' || con == 'patchy light snow' || con =='light snow' || con == 'patchy moderate snow' || con == 'moderate snow' || con == 'patchy heavy snow' || con == 'heavy snow' || con == 'ice pellets' || con == 'light sleet showers' || con == 'moderate or heavy sleet showers'  ){
@@ -166,7 +171,7 @@ double normalize(value, min, max) => ((value - min) / (max - min));
       if(con == 'patchy snow nearby'  || con == 'patchy sleet nearby'  || con == 'blowing snow'  || con == 'blizzard'){
         return snowRain;
       }
-      if(con == 'patchy light dizzle'  || con == 'light dizzle'  || con == 'freezing dizzle' ||  con == 'moderate rain at times' || con == 'moderate rain' || con=='heavy rain at times' || con =='heavy rain' || con == 'light freezing rain' || con=='moderate or heavy freezing rain' || con=='moderate or heavy rain shower' || con == 'torrential rain shower' ){
+      if(con == 'patchy light drizzle'  || con == 'light drizzle'  || con == 'freezing drizzle' ||  con == 'moderate rain at times' || con == 'moderate rain' || con=='heavy rain at times' || con =='heavy rain' || con == 'light freezing rain' || con=='moderate or heavy freezing rain' || con=='moderate or heavy rain shower' || con == 'torrential rain shower' ){
         return heavyRain;
       }
 

@@ -1,13 +1,11 @@
-import 'dart:ffi';
-
 import 'package:flutter/foundation.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:weather_guru/models/fav_city_model.dart';
 
 class DBHelper{
   static Database? _db;
-  static final int _version =1;
-  static final String _tableName = "FavCity";
+  static const int _version =1;
+  static const String _tableName = "FavCity";
 
   static Future<void> initDb() async{
 

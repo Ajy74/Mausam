@@ -15,7 +15,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 95.0,
       child: Stack(
         children: [
@@ -26,7 +26,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
               initialPage: 0,
               enableInfiniteScroll: true,
               autoPlay: true,
-              autoPlayInterval: Duration(seconds: 3),
+              autoPlayInterval: const Duration(seconds: 3),
               onPageChanged: (index, reason) {
                 setState(() {
                   _currentIndex = index;
@@ -53,7 +53,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
       int index = titles.indexOf(title);
       return Container(
         width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: 10.0),
+        margin: const EdgeInsets.symmetric(horizontal: 10.0),
         decoration: BoxDecoration(
           
           borderRadius: BorderRadius.circular(16),
@@ -75,7 +75,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 5.0),
+              const SizedBox(height: 5.0),
               Text(
                 subtitles[index],
                 style: titleStyle14,
@@ -83,7 +83,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 5.0),
+              const SizedBox(height: 5.0),
             ],
           ),
         ),
@@ -97,7 +97,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
       return Container(
         width: 5.0,
         height: 5.0,
-        margin: EdgeInsets.symmetric(horizontal: 2.0),
+        margin: const EdgeInsets.symmetric(horizontal: 2.0),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: _currentIndex == index ? Colors.white : deepPurple,

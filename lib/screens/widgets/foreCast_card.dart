@@ -29,7 +29,7 @@ class ForecastCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [BoxShadow(
               color: deepBlue.withOpacity(.2),
-              offset: Offset(2, 3),
+              offset: const Offset(2, 3),
               blurRadius: 5
             )]
           )  
@@ -66,7 +66,7 @@ class ForecastCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             
             children: [
-              Spacer(),
+              const Spacer(),
               if(isCurrent == true)  
                 Text("$title1",textAlign: TextAlign.center,style: titleStyle16black.copyWith(color: Colors.white),),
               if(isCurrent==false)
@@ -76,9 +76,9 @@ class ForecastCard extends StatelessWidget {
                 Text("$title2",textAlign: TextAlign.center,style: titleStyle14,),
               if(isCurrent==false)  
                 Text("$title2",textAlign: TextAlign.center,style: titleStyle14.copyWith(color: Colors.black.withOpacity(.7)),),
-              Spacer(),
+              const Spacer(),
               Image(image: AssetImage("$iconPath"),width: 50,height: 50,),
-              Spacer(),
+              const Spacer(),
                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +98,7 @@ class ForecastCard extends StatelessWidget {
                         deepBlue,
                       ]),
                     ),
-                    SizedBox(width:sizeBox5),
+                    const SizedBox(width:sizeBox5),
                     Padding(
                       padding: const EdgeInsets.only(top: 9),
                       child:
@@ -119,9 +119,9 @@ class ForecastCard extends StatelessWidget {
                           )
                         :  
                           CustomPaint(
-                              size: Size(5, 5),
+                              size: const Size(5, 5),
                               painter: CircleIconPainter(
-                                strokeGradient: LinearGradient(
+                                strokeGradient: const LinearGradient(
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
                                   colors: [  
@@ -136,7 +136,7 @@ class ForecastCard extends StatelessWidget {
                     )
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
             ],
           ),
           ),
