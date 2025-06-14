@@ -11,6 +11,13 @@ workflows:
         PACKAGE_NAME: "com.mourya.mausam_guru"
         GOOGLE_PLAY_TRACK: production
       flutter: stable
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+      cancel_previous_builds: true
     scripts:
       - name: Set up local.properties
         script: | 
