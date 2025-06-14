@@ -19,6 +19,10 @@ workflows:
           include: true
       cancel_previous_builds: true
     scripts:
+      -name: Show Flutter version
+        script: |
+          flutter --version
+          
       - name: Set up local.properties
         script: | 
           echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
