@@ -18,8 +18,8 @@ class ConditionItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(height: 25,child: icon,),
-          SizedBox(width:sizeBox5),
+          SizedBox(height: 25,child: icon,),
+          const SizedBox(width:sizeBox5),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
