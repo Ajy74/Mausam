@@ -10,7 +10,7 @@ workflows:
       vars:
         PACKAGE_NAME: "com.mourya.mausam_guru"
         GOOGLE_PLAY_TRACK: production
-      flutter: stable
+      flutter: 3.22.2
     triggering:
       events:
         - push
