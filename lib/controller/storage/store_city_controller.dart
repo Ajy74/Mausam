@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:weather_guru/models/fav_city_model.dart';
@@ -12,7 +10,7 @@ class StoreCityController extends GetxController{
 
   // @override
   // void onInit() {
-  //   // TODO: implement onInit
+  //   
   //   super.onInit();
   //   getCities();
   // }

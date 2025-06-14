@@ -38,7 +38,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     adControlller.initBannerAd();
     // adControlller.initInterstitialAd();
@@ -63,9 +62,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               return 
               homeController.isDataLoaded.value == true ?
               ListView(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 children: [
-                  Container(
+                  SizedBox(
                     width: Get.width,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: sidePadding18,vertical: sidePadding12),
@@ -73,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         
                           leftChild:Row(
                               children: [
-                                Image(image: AssetImage("assets/images/pin.png"),height: 30,width: 30,color: lightPurple,),
-                                SizedBox(width: sizeBox5,),
+                                const Image(image: AssetImage("assets/images/pin.png"),height: 30,width: 30,color: lightPurple,),
+                                const SizedBox(width: sizeBox5,),
                                 // Obx(() => )
                                 SizedBox(
                                   child: Text(
@@ -101,19 +100,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     ),
                   ), 
                       
-                    SizedBox(height: sizeBox12,),
+                    const SizedBox(height: sizeBox12,),
           
                    //for alerts 
                   //  CarouselWidget(),
           
-                    SizedBox(height: sizeBox12,),
+                    const SizedBox(height: sizeBox12,),
                       
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: sidePadding20),
                       child: Stack(
                         children: [
                           
-                          Container(
+                          SizedBox(
                             width: Get.width,
                             // height: Get.height*0.30,
                             height: 230,
@@ -130,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   borderRadius: BorderRadius.circular(40),
                                   boxShadow: [
                                     BoxShadow(
-                                      offset: Offset(5, 8),
+                                      offset: const Offset(5, 8),
                                       blurRadius: 10,
                                       color: lightPurple.withOpacity(.7),
                                     ),
@@ -178,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ),
                     ),
                       
-                    SizedBox(height: 40,),
+                    const SizedBox(height: 40,),
           
                      Container(
                       alignment: Alignment.center,width: double.maxFinite , height: 210,
@@ -208,13 +207,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ),
                     ),
               
-                    Container(
+                    SizedBox(
                       width: Get.width,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: sidePadding18,vertical: sidePadding20),
                         child: Row(
                           children: [
-                            SizedBox(width: sizeBox5,),
+                            const SizedBox(width: sizeBox5,),
                             Text("Hourly forecast",style: titleStyle22black,),
                             Expanded(child: Container()),
                             TextButton(
@@ -224,10 +223,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 adControlller.loadRewardAd("/forcast_day_screen");
                               }, 
                               style: ButtonStyle(
-                                overlayColor: MaterialStateProperty.resolveWith<Color>(
-                                  (Set<MaterialState> states) {
+                                overlayColor: WidgetStateProperty.resolveWith<Color>(
+                                  (Set<WidgetState> states) {
                                     // Customize the overlay color when the button is pressed
-                                    if (states.contains(MaterialState.pressed)) {
+                                    if (states.contains(WidgetState.pressed)) {
                                       return deepPurple.withOpacity(.1);  // Replace with your desired color
                                     }
                                     return deepPurple.withOpacity(.1);  // Return null to use the default overlay color
@@ -240,10 +239,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 Row(
                                   children: [
                                     Text("Next ${(homeController.weatherData.forecast!.forecastday!.length)-1} days",style: titleStyle16.copyWith(color: deepPurple),),
-                                    Icon(Icons.arrow_forward_ios_rounded,size: 14,color: deepPurple,)
+                                    const Icon(Icons.arrow_forward_ios_rounded,size: 14,color: deepPurple,)
                                   ],
                                 )
-                                :Container(height: 20,width: 20,child: CircularProgressIndicator(color: deepPurple,strokeWidth:3 ,)) ;
+                                :const SizedBox(height: 20,width: 20,child: CircularProgressIndicator(color: deepPurple,strokeWidth:3 ,)) ;
                               })
                             ),
                           ],
@@ -254,11 +253,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
-                      child: Container(
+                      child: SizedBox(
                         height: 220,
                         child: Center(
                           child: ListView.builder(
-                            physics: BouncingScrollPhysics(),
+                            physics: const BouncingScrollPhysics(),
                             scrollDirection: Axis.horizontal,
                             itemCount:homeController.weatherData.forecast!.forecastday![0].hour!.length ,
                             itemBuilder: (BuildContext context, index ){
@@ -283,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       ),
                     ),
               
-                    SizedBox(height: sizeBox20,),
+                    const SizedBox(height: sizeBox20,),
                 ],
               )
               : homeShimmer();
@@ -298,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           height: adControlller.bannerAd.size.height.toDouble(),
           width: adControlller.bannerAd.size.width.toDouble(),
           child: AdWidget(ad: adControlller.bannerAd),
-        )  :SizedBox()  ;
+        )  :const SizedBox()  ;
       }) ,
     );
   }
@@ -308,7 +307,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   return   
      Column(
       children: [
-          Container(
+          SizedBox(
             width: Get.width,
             child: Padding(
               padding: const EdgeInsets.only(left: sidePadding18,right: sidePadding18,top: 8,bottom: 5),
@@ -316,7 +315,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 leftChild:  Row(
                   children: [
                     // SvgPicture.asset('assets/images/rotating_sun.svg',height: 35,width: 30, ),
-                    SizedBox(width:sizeBox5 ,),
+                    const SizedBox(width:sizeBox5 ,),
                     Text("Today's Condition",style: titleStyle22black,)
                   ],
                 ),
@@ -333,17 +332,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               mainAxisAlignment: Get.mediaQuery.orientation == Orientation.portrait ? MainAxisAlignment.center :MainAxisAlignment.spaceEvenly,
               children: [
                 ConditionItem(
-                icon:  Image(image: AssetImage("assets/images/uv.png"),),
+                icon:  const Image(image: AssetImage("assets/images/uv.png"),),
                 title: "uv index",
                 subTitle: "${homeController.weatherData.current!.uv}",
                 ),
                 ConditionItem(
-                  icon: Image(image: AssetImage("assets/images/wind.png"),),
+                  icon: const Image(image: AssetImage("assets/images/wind.png"),),
                   title: "wind",
                   subTitle: "${homeController.weatherData.current!.windKph.toString().split('.').first}kph",
                 ),
                 ConditionItem(
-                  icon: Image(image: AssetImage("assets/images/humidity.png"),),
+                  icon: const Image(image: AssetImage("assets/images/humidity.png"),),
                   title: "humidity",
                   subTitle: "${homeController.weatherData.current!.humidity}%",
                 ),
@@ -351,23 +350,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ],
             )
           ),
-          SizedBox(height: sizeBox5,),
+          const SizedBox(height: sizeBox5,),
           Expanded(
             child:Row(
               mainAxisAlignment: Get.mediaQuery.orientation == Orientation.portrait ? MainAxisAlignment.center :MainAxisAlignment.spaceEvenly,
               children: [
                 ConditionItem(
-                  icon: Image(image: AssetImage("assets/images/rain.png"),),
+                  icon: const Image(image: AssetImage("assets/images/rain.png"),),
                   title: "rain         ",
                   subTitle: "${homeController.weatherData.forecast!.forecastday![0].day!.dailyChanceOfRain}%",
                 ),
                 ConditionItem(
-                  icon: Image(image: AssetImage("assets/images/visibility.png"),),
+                  icon: const Image(image: AssetImage("assets/images/visibility.png"),),
                   title: "visible",
                   subTitle: "${homeController.weatherData.current!.visKm} km",
                 ),
                 ConditionItem(
-                  icon: Image(image: AssetImage("assets/images/pressure.png"),),
+                  icon: const Image(image: AssetImage("assets/images/pressure.png"),),
                   title: "pressure",
                   subTitle: "${(homeController.weatherData.current!.pressureMb! * 0.000986923).toStringAsFixed(2)} atm",
                 ),
@@ -376,7 +375,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             )
           ),
           
-          SizedBox(height: sizeBox12,),
+          const SizedBox(height: sizeBox12,),
      
         ],
       )
@@ -392,7 +391,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 12,),
+                const SizedBox(height: 12,),
                 Stack(
                   children: [
                     Row(
@@ -414,11 +413,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               ]),
                             ),
                           ),
-                        SizedBox(width: 2,),
+                        const SizedBox(width: 2,),
                         Padding(
                           padding: const EdgeInsets.only(top: 17),
                           child: CustomPaint(
-                              size: Size(11, 11),
+                              size: const Size(11, 11),
                               painter: CircleIconPainter(
                                 strokeGradient: LinearGradient(
                                   begin: Alignment.topCenter,
@@ -433,7 +432,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               ),
                           )
                         ),
-                        SizedBox(width: sizeBox5,),
+                        const SizedBox(width: sizeBox5,),
                           // SizedBox(width: 30,)
                         ],
                       ),

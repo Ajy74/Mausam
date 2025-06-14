@@ -10,13 +10,13 @@ import 'custom_draw.dart';
 
 class SliderWidget extends StatefulWidget {
 
-  SliderWidget({super.key,required this.sunrise,required this.sunset});
+  const SliderWidget({super.key,required this.sunrise,required this.sunset});
 
-  String sunrise;
-  String sunset;
+  final String sunrise;
+  final String sunset;
   
   @override
-  _SliderWidgetState createState() => _SliderWidgetState();
+  State<SliderWidget> createState() => _SliderWidgetState();
 }
 
 class _SliderWidgetState extends State<SliderWidget> {
